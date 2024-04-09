@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542472554402",
+    "project_id": "e-commerce-advanced-31f71",
+    "storage_bucket": "e-commerce-advanced-31f71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542472554402:android:d01084393f1d1f19f394fb",
+        "android_client_info": {
+          "package_name": "com.example.asroo_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAng62oRU1DAsA-i3mHQ_YoqSm4QWA7uL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
