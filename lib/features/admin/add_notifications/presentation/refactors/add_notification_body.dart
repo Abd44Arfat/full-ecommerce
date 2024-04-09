@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/add_notification_item.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/craete_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,12 +10,36 @@ class AddNotificationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
-      child:Column(children: [
-
-//create notification title 
-CraeteNotification()
-
-      ],) ,
+      child: Column(
+        children: [
+//create notification title
+          CraeteNotification(),
+//get all  notification
+          Expanded(
+              child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 20.h,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: ListView.separated(
+                  itemCount: 3,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => SizedBox(
+                    height: 15.h,
+                  ),
+                  itemBuilder: (context, index) {
+                    return AddNotificationItem();
+                  },
+                ),
+              )
+            ],
+          ))
+        ],
+      ),
     );
   }
 }
