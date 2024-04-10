@@ -4,6 +4,7 @@ import 'package:asroo_store/asroo_store_app.dart';
 import 'package:asroo_store/core/app/bloc_observer.dart';
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
+import 'package:asroo_store/core/service/hive/hive_database.dart';
 import 'package:asroo_store/core/service/push_notification/firebase_cloud_messaging.dart';
 import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/firebase_options.dart';
@@ -16,6 +17,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
+  await HiveDatabase().setup();
 
  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
