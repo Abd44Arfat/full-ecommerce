@@ -35,6 +35,4 @@ jobs:
         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
       run: |
         cd android  # Change the working directory to "android"
-        bundle lock --add-platform x86_64-linux  # Add the platform to the lockfile
-        bundle install --jobs 4  # Install dependencies
         bundle exec fastlane android firebase_distribution
