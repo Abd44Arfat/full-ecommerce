@@ -7,8 +7,11 @@ import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_notifications/data/models/add_notification_model.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/edit/edit_notification.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/send/send_notification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'delete/delete_notification_widget.dart';
 
 class AddNotificationItem extends StatelessWidget {
   const AddNotificationItem({
@@ -51,7 +54,17 @@ class AddNotificationItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 //delete notification
-          
+                DeleteNotificationWidget(
+                  notificationModel: notificationModel,
+                ),
+                SizedBox(width: 40.w),
+                //Edit notification
+                EditNotification(
+                  notificationModel: notificationModel,
+                ),
+                SizedBox(width: 40.w),
+                //send notification
+              SendNotificationWidget(index: index, notificationModel: notificationModel,)
               ],
             )
           ],
