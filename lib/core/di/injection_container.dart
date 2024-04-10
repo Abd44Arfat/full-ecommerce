@@ -112,4 +112,4 @@ Future<void> _initAddNotification() async {
     ..registerFactory(() => SendNotificationBloc(sl()))
     ..registerLazySingleton(() => AddNotificationRepo(sl()))
     ..registerLazySingleton(AddNotificationDataSource.new);
-}
+}  
